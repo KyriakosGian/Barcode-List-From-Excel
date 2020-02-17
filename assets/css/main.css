@@ -1,0 +1,36 @@
+@media print {
+    #header { display:none; }
+    #forms { display:none; }
+    #message { display:none; }
+    #noprint { display:none; }
+    footer { display:none; }
+}
+
+img#logo {
+    padding-bottom: 12px;
+}
+
+input#uploadedFile {
+    padding: 1em 4em;
+}
+
+.printTitle {
+    font-weight: bold;
+}
+
+.btn-rounded-icon {
+    border-radius: 100px;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 60px;
+}
+
+th {
+    text-align: center;
+    text-decoration: underline;
+}
+
+td {
+    text-align: center;
+    vertical-align: middle !important;
+}
