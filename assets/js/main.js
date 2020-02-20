@@ -1,18 +1,15 @@
 //Name the list title 
-const source = document.getElementById('inputTitle');
-const result = document.getElementById('printTitle');
-
 const typeHandler = function(e) {
-  result.innerHTML = e.target.value;
+  document.getElementById('printTitle').innerHTML = e.target.value;
 }
 
-source.addEventListener('input', typeHandler);
-source.addEventListener('propertychange', typeHandler);
+document.getElementById('inputTitle').addEventListener('input', typeHandler);
+document.getElementById('inputTitle').addEventListener('propertychange', typeHandler);
 
 //Add date to bottom
 document.getElementById('date').innerHTML = Date("DD-MM-YYYY");
 
-//excel barcode functions
+//Excel barcode functions
 document.getElementById('uploadedFile').addEventListener('change', handleFileSelect, false);
 
 function handleFileSelect(evt) {
