@@ -1,13 +1,13 @@
 //Name the list title 
-const $source = document.getElementById('inputTitle');
-const $result = document.getElementById('printTitle');
+const source = document.getElementById('inputTitle');
+const result = document.getElementById('printTitle');
 
 const typeHandler = function(e) {
-  $result.innerHTML = e.target.value;
+  result.innerHTML = e.target.value;
 }
 
-$source.addEventListener('input', typeHandler)
-$source.addEventListener('propertychange', typeHandler) 
+source.addEventListener('input', typeHandler);
+source.addEventListener('propertychange', typeHandler);
 
 //Add date to bottom
 document.getElementById('date').innerHTML = Date("DD-MM-YYYY");
@@ -16,9 +16,12 @@ document.getElementById('date').innerHTML = Date("DD-MM-YYYY");
 document.getElementById('uploadedFile').addEventListener('change', handleFileSelect, false);
 
 function handleFileSelect(evt) {
+  document.getElementById('excelDataTable').innerHTML = "";
   var files = evt.target.files;
   var xl2json = new ExcelToJSON();
   xl2json.parseExcel(files[0]);
+  delete files;
+  delete xl2json;
 }
 
 class ExcelToJSON {
