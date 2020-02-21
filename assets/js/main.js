@@ -1,10 +1,17 @@
 //Name the list title 
 const typeHandler = function(e) {
   document.getElementById('printTitle').innerHTML = e.target.value;
+  localStorage.setItem('Title',e.target.value); //Save Title to localStorage
 }
 
 document.getElementById('inputTitle').addEventListener('input', typeHandler);
 document.getElementById('inputTitle').addEventListener('propertychange', typeHandler);
+
+//Load Title from localStorage if exist
+if (localStorage.getItem("Title") != null) {
+  document.getElementById('printTitle').innerHTML = localStorage.getItem("Title");
+  document.getElementById('inputTitle').defaultValue  = localStorage.getItem("Title");
+}
 
 //Add date to bottom
 document.getElementById('date').innerHTML = Date("DD-MM-YYYY");
