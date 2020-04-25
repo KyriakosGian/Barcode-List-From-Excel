@@ -3,12 +3,15 @@
 Introduction
 ----
 This is a simple barcode builder from your excel sheet. 
-Workbook's first column converts into a printable barcode. Fill the barcode number in the first column allways.
+Workbook's first column converts into a printable barcode. Fill the barcode number in the first column always.
 
 **BarcodeListFromExcel** is a **Excel reader & barcode generator** written in JavaScript. It supports multiple barcode formats and works in browser.
 
-Example
-----
+# Demo
+#### [Netlify online demo](hhttps://barcodelistfromexcel.netlify.app/)
+<!-- #### [CodePen Demo](http://codepen.io/lindell/pen/eZKBdO?editors=1010) -->
+
+# Example
 #### Convert this
 ![Excel sheet](/assets/images/image_1.jpg)
 
@@ -27,18 +30,11 @@ Name your work list (Optional).
 ### Step 4:
 You are done! Print the results.
 
-Demo
-----
-#### [GitHub BarcodeListFromExcel](https://github.com/KyriakosG78/BarcodeListFromExcel)
-<!-- #### [CodePen Demo](http://codepen.io/lindell/pen/eZKBdO?editors=1010) -->
+![Excel sheet](/assets/images/image_5.jpg)
 
-Libraries
-----
+# Libraries
 
 #### [SheetJS](https://github.com/SheetJS/sheetjs) Read excel workbooks.
 #### [JsBarcode](https://github.com/lindell/JsBarcode) Barcode generator.
 #### [Bootstrap](https://getbootstrap.com/) Theming.
 #### [jQuery](https://jquery.com/) Javascript library.
-
-#### Results
-![Excel sheet](/assets/images/image_5.jpg)
