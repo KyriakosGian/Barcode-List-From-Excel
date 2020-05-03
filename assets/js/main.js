@@ -49,7 +49,7 @@ class ExcelToJSON {
                     var table = document.getElementById('excelDataTable');
                     var targetTDs = table.querySelectorAll('tr > td:first-child');
 
-                    //Chanche first column to svg image barcode
+                    //Chance first column to svg image barcode
                     for (var i = 0; i < targetTDs.length; i++) {
                         var td = targetTDs[i];
                         td.innerHTML = '<svg class="barcode" jsbarcode-value="' + td.innerHTML + '" jsbarcode-height="35" jsbarcode-width="2"</svg>';
@@ -78,7 +78,7 @@ function buildHtmlTable(myList, selector) {
     for (var colIndex = 0; colIndex < columns.length; colIndex++) {
       var cellValue = myList[i][columns[colIndex]];
 
-      if (colIndex == 0) {
+      if (colIndex === 0) {
 
       };
 
@@ -101,7 +101,7 @@ function addAllColumnHeaders(myList, selector) {
   for (var i = 0; i < myList.length; i++) {
     var rowHash = myList[i];
     for (var key in rowHash) {
-      if ($.inArray(key, columnSet) == -1) {
+      if ($.inArray(key, columnSet) === -1) {
         columnSet.push(key);
         headerTr$.append($('<th/>').html(key));
       }

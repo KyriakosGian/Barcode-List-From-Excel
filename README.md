@@ -2,8 +2,8 @@
 
 Introduction
 ----
-This is a simple barcode builder from your excel sheet. 
-Workbook's first column converts into a printable barcode. Fill the barcode number in the first column always.
+This is a simple barcode builder from your Excel sheet. 
+Workbook's first column converts into a printable barcode. Always fill the barcode number in the first column.
 
 **BarcodeListFromExcel** is a **Excel reader & barcode generator** written in JavaScript. It supports multiple barcode formats and works in browser.
 
