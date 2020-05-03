@@ -25,7 +25,8 @@ Select your Excel workbook.
 
 ### Step 2-3:
 Name your work list (Optional).
-Select barcode height (Optional). Default is 35px.
+
+Select barcode height (Optional), default is 35px.
 
 ### Step 4:
 You are done! Print the results.
