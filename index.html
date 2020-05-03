@@ -22,7 +22,7 @@
   <div class="container">
     <div id="forms" class="rounded shadow p-5 bg-white">
       <div class="row">
-        <div class="col-md-4 mb-4 mb-md-0 text-center">
+        <div class="col-md-3 mb-3 mb-md-0 text-center">
           <i class="ti-paint-bucket text-primary h1"></i>
           <h3 class="mt-4 text-capitalize h5 ">1. Select your excel workbook</h3>
           <p class="regular text-muted"></p>
@@ -36,7 +36,7 @@
             </fieldset>
           </form>
         </div>
-        <div class="col-md-4 mb-4 mb-md-0 text-center">
+        <div class="col-md-3 mb-3 mb-md-0 text-center">
           <i class="ti-shine text-primary h1"></i>
           <h3 class="mt-4 text-capitalize h5 ">2. Name the list</h3>
           <p class="regular text-muted">Name your work list (Optional)</p>
@@ -44,9 +44,30 @@
             <input id="inputTitle" class="form-control form-control-lg" type="text" placeholder="Title">
           </div>
         </div>
-        <div class="col-md-4 mb-4 mb-md-0 text-center">
+        <div class="col-md-3 mb-3 mb-md-0 text-center">
+          <i class="ti-shine text-primary h1"></i>
+          <h3 class="mt-4 text-capitalize h5 ">3. BarCode Height</h3>
+          <p class="regular text-muted">Select BarCode Height (Optional)</p>
+          <div class="form-group">
+            <div class="custom-controls-stacked">
+              <label class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" name="height" value="15" onchange="SetBarcodeHeight(this.value)">
+                <div class="custom-control-label">15px</div>
+              </label>
+              <label class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" name="height" value="35" onchange="SetBarcodeHeight(this.value)" checked>
+                <div class="custom-control-label">35px</div>
+              </label>
+              <label class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" name="height" value="100" onchange="SetBarcodeHeight(this.value)">
+                <div class="custom-control-label">100px</div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3 mb-md-0 text-center">
           <i class="ti-thought text-primary h1"></i>
-          <h3 class="mt-4 text-capitalize h5 ">3. Print</h3>
+          <h3 class="mt-4 text-capitalize h5 ">4. Print</h3>
           <p class="regular text-muted">After workbook is loaded click on print button.</p>
           <button type="button" class="btn btn-primary btn-lg btn-rounded-icon" onclick="window.print();">Print</button>
         </div>
