@@ -17,14 +17,15 @@ Workbook's first column converts into a printable barcode. Always fill the barco
 #### To this
 ![Excel sheet](/assets/images/image_4.jpg)
 
+### Start app:
+Run index.html in your browser or on [Netlify](https://barcodelistfromexcel.netlify.app/) 
+
 ### Step 1:
-Run intex.html in your browser.
+Select your Excel workbook.
 
-### Step 2:
-Select your excel workbook.
-
-### Step 3:
+### Step 2-3:
 Name your work list (Optional).
+Select barcode height (Optional). Default is 35px.
 
 ### Step 4:
 You are done! Print the results.
