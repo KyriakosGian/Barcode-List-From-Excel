@@ -1,11 +1,17 @@
 # CHANGELOG
 
+## v1.0.4 (2021-01-20)
+
+* Update SheetJS to v0.16.9
+* Update JsBarcode to v3.11.3
+* Update Bootstrap to v5.0.0-beta1
+
 ## v1.0.3 (2020-05-03)
 
-* Add SetBarcodeHeight function & functionality
 * Clear some code
 * Update JsBarcode to v3.11.0
- 
+* Add SetBarcodeHeight function & functionality
+
 ## v1.0.2 (2020-04-25)
 
 * Add an online demo to Netlify

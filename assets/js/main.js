@@ -14,7 +14,7 @@ if (localStorage.getItem("Title") != null) {
 }
 
 //Add date to bottom
-document.getElementById('date').innerHTML = Date("DD-MM-YYYY");
+document.getElementById('date').innerHTML = Date();
 
 //Excel barcode functions
 document.getElementById('uploadedFile').addEventListener('change', handleFileSelect, false);
