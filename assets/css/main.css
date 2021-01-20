@@ -55,18 +55,21 @@ img#logo {
 }
 
 input#uploadedFile {
-    padding: 1em 4em;
+    padding: 1em;
 }
 
 .printTitle {
     font-weight: bold;
 }
 
-.btn-rounded-icon {
-    border-radius: 100px;
+.form-control-lg {
+    text-align: center;
+}
+
+.btn-lg-bg {
     color: #fff;
     border: 1px solid #fff;
-    padding: 10px 60px;
+    padding: 10px 50px;
 }
 
 th {

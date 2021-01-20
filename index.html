@@ -2,9 +2,11 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="description" content="This is a simple barcode builder from your excel sheet.">
+  <meta name="keywords" content="barcode, excel, sheet">
+  <meta name="author" content="KyriakosG78">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>BarCode List from Excel</title>
-  <!--Theme https://bootswatch.com/cosmo/-->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -12,7 +14,7 @@
   <div id="header">
     <div class="container">
       <div class="jumbotron">
-        <h1 class="display-3"><a class="btn btn-link text-secondary" href="" title="Barcode">
+        <h1 class="display-3"><a class="btn btn-link text-secondary p-0" href="" title="Barcode">
             <span><img id="logo" src="assets/images/scan.svg" alt="Link" width="80" height="80"></span>
           </a>BarCode List from Excel</h1>
         <p class="lead">This is a simple barcode builder from your excel sheet.</p>
@@ -39,7 +41,7 @@
         <div class="col-md-3 mb-3 mb-md-0 text-center">
           <i class="ti-shine text-primary h1"></i>
           <h3 class="mt-4 text-capitalize h5 ">2. Name the list</h3>
-          <p class="regular text-muted">Name your work list (Optional)</p>
+          <p class="regular text-muted">Name your work list<br>(Optional)</p>
           <div class="form-group">
             <input id="inputTitle" class="form-control form-control-lg" type="text" placeholder="Title">
           </div>
@@ -47,7 +49,7 @@
         <div class="col-md-3 mb-3 mb-md-0 text-center">
           <i class="ti-shine text-primary h1"></i>
           <h3 class="mt-4 text-capitalize h5 ">3. BarCode Height</h3>
-          <p class="regular text-muted">Select BarCode Height (Optional)</p>
+          <p class="regular text-muted">Select BarCode Height<br>(Optional)</p>
           <div class="form-group">
             <div class="custom-controls-stacked">
               <label class="custom-control custom-radio">
@@ -69,7 +71,7 @@
           <i class="ti-thought text-primary h1"></i>
           <h3 class="mt-4 text-capitalize h5 ">4. Print</h3>
           <p class="regular text-muted">After workbook is loaded click on print button.</p>
-          <button type="button" class="btn btn-primary btn-lg btn-rounded-icon" onclick="window.print();">Print</button>
+          <button type="button" class="btn btn-primary btn-lg btn-lg-bg" onclick="window.print();">Print</button>
         </div>
       </div>
     </div>
@@ -100,13 +102,9 @@
     </div>
   </footer>
   <script src="assets/js/jquery-3.4.1.slim.min.js"></script>
-  <!--https://www.cdnpkg.com/xlsx?id=78603 -->
-  <!--https://github.com/SheetJS/sheetjs -->
   <script src="assets/js/jszip.js"></script>
   <script src="assets/js/xlsx.js"></script>
-  <!--https://github.com/lindell/JsBarcode/ -->
   <script src="assets/js/JsBarcode.all.min.js"></script>
-  <!--Custom js-->
   <script src="assets/js/main.js"></script>
 </body>
 </html>
