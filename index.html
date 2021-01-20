@@ -1,110 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="description" content="This is a simple barcode builder from your excel sheet.">
-  <meta name="keywords" content="barcode, excel, sheet">
-  <meta name="author" content="KyriakosG78">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>BarCode List from Excel</title>
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/main.css">
+    <meta charset="utf-8">
+    <meta name="description" content="This is a simple barcode builder from your excel sheet.">
+    <meta name="keywords" content="barcode, excel, sheet">
+    <meta name="author" content="KyriakosG78">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>BarCode List from Excel</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-  <div id="header">
+<div id="header">
     <div class="container">
-      <div class="jumbotron">
-        <h1 class="display-3"><a class="btn btn-link text-secondary p-0" href="" title="Barcode">
-            <span><img id="logo" src="assets/images/scan.svg" alt="Link" width="80" height="80"></span>
-          </a>BarCode List from Excel</h1>
-        <p class="lead">This is a simple barcode builder from your excel sheet.</p>
-      </div>
+        <div class="jumbotron">
+            <h1 class="display-3"><a class="btn btn-link text-secondary p-0" href="" title="Barcode">
+                <span><img id="logo" src="assets/images/scan.svg" alt="Link" width="80" height="80"></span>
+            </a>BarCode List from Excel</h1>
+            <p class="lead">This is a simple barcode builder from your excel sheet.</p>
+        </div>
     </div>
-  </div>
-  <div class="container">
+</div>
+<div class="container">
     <div id="forms" class="rounded shadow p-5 bg-white">
-      <div class="row">
-        <div class="col-md-3 mb-3 mb-md-0 text-center">
-          <i class="ti-paint-bucket text-primary h1"></i>
-          <h3 class="mt-4 text-capitalize h5 ">1. Select your excel workbook</h3>
-          <p class="regular text-muted"></p>
-          <form id="fileForm" enctype="multipart/form-data">
-            <fieldset class="form-group">
-              <div class="form-group">
-                <input id="uploadedFile" class="uploadedFile form-control-file" type=file name="file"
-                  accept=".xls,.xlsx" aria-describedby="fileHelp">
-                <small id="fileHelp" class="form-text text-muted">Select your excel workbook from your folder.</small>
-              </div>
-            </fieldset>
-          </form>
-        </div>
-        <div class="col-md-3 mb-3 mb-md-0 text-center">
-          <i class="ti-shine text-primary h1"></i>
-          <h3 class="mt-4 text-capitalize h5 ">2. Name the list</h3>
-          <p class="regular text-muted">Name your work list<br>(Optional)</p>
-          <div class="form-group">
-            <input id="inputTitle" class="form-control form-control-lg" type="text" placeholder="Title">
-          </div>
-        </div>
-        <div class="col-md-3 mb-3 mb-md-0 text-center">
-          <i class="ti-shine text-primary h1"></i>
-          <h3 class="mt-4 text-capitalize h5 ">3. BarCode Height</h3>
-          <p class="regular text-muted">Select BarCode Height<br>(Optional)</p>
-          <div class="form-group">
-            <div class="custom-controls-stacked">
-              <label class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" name="height" value="15" onchange="SetBarcodeHeight(this.value)">
-                <div class="custom-control-label">15px</div>
-              </label>
-              <label class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" name="height" value="35" onchange="SetBarcodeHeight(this.value)" checked>
-                <div class="custom-control-label">35px</div>
-              </label>
-              <label class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" name="height" value="100" onchange="SetBarcodeHeight(this.value)">
-                <div class="custom-control-label">100px</div>
-              </label>
+        <div class="row">
+            <div class="col-md-3 mb-3 mb-md-0 text-center">
+                <i class="ti-paint-bucket text-primary h1"></i>
+                <h3 class="mt-4 text-capitalize h5 ">1. Select your excel workbook</h3>
+                <p class="regular text-muted"></p>
+                <form id="fileForm" enctype="multipart/form-data">
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            <input id="uploadedFile" class="uploadedFile form-control-file" type=file name="file" accept=".xls,.xlsx" aria-describedby="fileHelp">
+                            <small id="fileHelp" class="form-text text-muted">Select your excel workbook from your folder.</small>
+                        </div>
+                    </fieldset>
+                </form>
             </div>
-          </div>
+            <div class="col-md-3 mb-3 mb-md-0 text-center">
+                <i class="ti-shine text-primary h1"></i>
+                <h3 class="mt-4 text-capitalize h5 ">2. Name the list</h3>
+                <p class="regular text-muted">Name your work list<br>(Optional)</p>
+                <div class="form-group">
+                    <input id="inputTitle" class="form-control form-control-lg" type="text" placeholder="Title">
+                </div>
+            </div>
+            <div class="col-md-3 mb-3 mb-md-0 text-center">
+                <i class="ti-shine text-primary h1"></i>
+                <h3 class="mt-4 text-capitalize h5 ">3. BarCode Height</h3>
+                <p class="regular text-muted">Select BarCode Height<br>(Optional)</p>
+                <div class="form-group">
+                    <div class="custom-controls-stacked">
+                        <label class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" name="height" value="15" onchange="SetBarcodeHeight(this.value)">
+                            <div class="custom-control-label">15px</div>
+                        </label>
+                        <label class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" name="height" value="35" onchange="SetBarcodeHeight(this.value)" checked>
+                            <div class="custom-control-label">35px</div>
+                        </label>
+                        <label class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" name="height" value="100" onchange="SetBarcodeHeight(this.value)">
+                            <div class="custom-control-label">100px</div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3 mb-md-0 text-center">
+                <i class="ti-thought text-primary h1"></i>
+                <h3 class="mt-4 text-capitalize h5 ">4. Print</h3>
+                <p class="regular text-muted">After workbook is loaded click on print button.</p>
+                <button type="button" class="btn btn-primary btn-lg btn-lg-bg" onclick="window.print();">Print</button>
+            </div>
         </div>
-        <div class="col-md-3 mb-3 mb-md-0 text-center">
-          <i class="ti-thought text-primary h1"></i>
-          <h3 class="mt-4 text-capitalize h5 ">4. Print</h3>
-          <p class="regular text-muted">After workbook is loaded click on print button.</p>
-          <button type="button" class="btn btn-primary btn-lg btn-lg-bg" onclick="window.print();">Print</button>
-        </div>
-      </div>
     </div>
     <hr id="noprint">
     <div class="results">
-      <div id="grid">
-        <div class="title text-center">
-          <h1 id="printTitle" class="printTitle"></h1>
+        <div id="grid">
+            <div class="title text-center">
+                <h1 id="printTitle" class="printTitle"></h1>
+            </div>
+            <div class="table-responsive">
+                <table id="excelDataTable" class="table table-bordered"></table>
+            </div>
+            <div class="date text-center">
+                <span id="date"></span>
+            </div>
         </div>
-        <div class="table-responsive">
-          <table id="excelDataTable" class="table table-bordered"></table>
-        </div>
-        <div class="date text-center">
-          <span id="date"></span>
-        </div>
-      </div>
     </div>
-  </div>
-  <footer class="border-top">
+</div>
+<footer class="border-top">
     <div class="text-center pt-3 pt-lg-4">
-      <h3 class="font-weight-light"><a class="text-muted" href="https://barcodelistfromexcel.netlify.app/" target="_blank">BarCode List from Excel</a></h3>
-      <div class="font-size-ms text-muted text-center">
-        Made by 
-        <a class="text-muted" href="https://github.com/KyriakosG78" target="_blank">KyriakosG78</a>
-        on
-        <a class="text-muted" href="https://github.com/KyriakosG78/BarcodeListFromExcel" target="_blank">GitHub</a>
-      </div>
+        <h3 class="font-weight-light"><a class="text-muted" href="https://barcodelistfromexcel.netlify.app/" target="_blank">BarCode List from Excel</a></h3>
+        <div class="font-size-ms text-muted text-center">
+            Made by
+            <a class="text-muted" href="https://github.com/KyriakosG78" target="_blank">KyriakosG78</a>
+            on
+            <a class="text-muted" href="https://github.com/KyriakosG78/BarcodeListFromExcel" target="_blank">GitHub</a>
+        </div>
     </div>
-  </footer>
-  <script src="assets/js/jquery-3.4.1.slim.min.js"></script>
-  <script src="assets/js/jszip.js"></script>
-  <script src="assets/js/xlsx.js"></script>
-  <script src="assets/js/JsBarcode.all.min.js"></script>
-  <script src="assets/js/main.js"></script>
+</footer>
+<script src="assets/js/jquery-3.4.1.slim.min.js"></script>
+<script src="assets/js/jszip.js"></script>
+<script src="assets/js/xlsx.js"></script>
+<script src="assets/js/JsBarcode.all.min.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
