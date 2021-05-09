@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v1.0.5 (2021-05-09)
+
+* Add an online demo to GitHub pages
+  https://kyriakosg78.github.io/Barcode-List-From-Excel/
+
 ## v1.0.4 (2021-01-20)
 
 * Update SheetJS to v0.16.9
