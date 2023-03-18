@@ -8,7 +8,7 @@ Workbook's first column converts into a printable barcode. Always fill the barco
 **BarcodeListFromExcel** is a **Excel reader & barcode generator** written in JavaScript. It supports multiple barcode formats and works in browser.
 
 # Demo
-#### [GitHub Pages](https://kyriakosg78.github.io/Barcode-List-From-Excel/)
+#### [GitHub Pages](https://kyriakosgian.github.io/Barcode-List-From-Excel/)
 #### [Netlify online demo](https://barcodelistfromexcel.netlify.app/)
 
 # Example
