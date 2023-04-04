@@ -1,9 +1,18 @@
 # CHANGELOG
 
+## v2.0.0 (2023-04-04)
+
+* Add Boostrap Icons 
+* Update Bootstrap to v5.3.0-alpha3
+* Update JsBarcode to v3.11.5
+* Update SheetJS to v0.19.2 xlsx.full.min.js
+* Remove jQuery
+* Remove jsZip
+
 ## v1.0.5 (2021-05-09)
 
 * Add an online demo to GitHub pages
-  https://kyriakosg78.github.io/Barcode-List-From-Excel/
+  https://kyriakosgian.github.io/Barcode-List-From-Excel/
 
 ## v1.0.4 (2021-01-20)
 

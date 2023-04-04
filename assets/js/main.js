@@ -17,75 +17,67 @@ if (localStorage.getItem("Title") != null) {
 document.getElementById('date').innerHTML = Date();
 
 //Excel barcode functions
-document.getElementById('uploadedFile').addEventListener('change', handleFileSelect, false);
+const uploadedFile = document.getElementById('uploadedFile');
+const excelDataTable = document.getElementById('excelDataTable');
+
+uploadedFile.addEventListener('change', handleFileSelect, false);
 
 function handleFileSelect(evt) {
-    document.getElementById('excelDataTable').innerHTML = "";
-    let files = evt.target.files;
-    let xl2json = new ExcelToJSON();
+    excelDataTable.innerHTML = "";
+    const files = evt.target.files;
+    const xl2json = new ExcelToJSON();
     xl2json.parseExcel(files[0]);
-    delete files;
-    delete xl2json;
 }
 
 class ExcelToJSON {
-    constructor() {
-        this.parseExcel = function (file) {
-            var reader = new FileReader();
+    parseExcel(file) {
+        const reader = new FileReader();
 
-            reader.onload = function (e) {
-                const data = e.target.result;
+        reader.onload = (e) => {
+            const data = e.target.result;
+            const workbook = XLSX.read(data, { type: 'binary' });
 
-                const workbook = XLSX.read(data, {
-                    type: 'binary'
-                });
+            workbook.SheetNames.forEach((sheetName) => {
+                const XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+                const json_object = JSON.stringify(XL_row_object);
+                buildHtmlTable(JSON.parse(json_object), 'excelDataTable');
 
-                workbook.SheetNames.forEach(function (sheetName) {
-                    const XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
-                    const json_object = JSON.stringify(XL_row_object);
+                const targetTDs = excelDataTable.querySelectorAll('tr > td:first-child');
 
-                    buildHtmlTable(JSON.parse(json_object), '#excelDataTable')
+                for (let i = 0; i < targetTDs.length; i++) {
+                    const td = targetTDs[i];
+                    td.innerHTML = `<svg class="barcode" jsbarcode-value="${td.innerHTML}" jsbarcode-height="35" jsbarcode-width="2"</svg>`;
+                }
 
-                    const table = document.getElementById('excelDataTable');
-                    const targetTDs = table.querySelectorAll('tr > td:first-child');
-
-                    //Chance first column to svg image barcode
-                    for (let i = 0; i < targetTDs.length; i++) {
-                        const td = targetTDs[i];
-                        td.innerHTML = '<svg class="barcode" jsbarcode-value="' + td.innerHTML + '" jsbarcode-height="35" jsbarcode-width="2"</svg>';
-                        //id="barcode-' + td.innerHTML +'"
-                    }
-                    //Init all barcode clases to 
-                    JsBarcode(".barcode").init();
-                });
-            };
-
-            reader.onerror = function (ex) {
-                console.log(ex);
-            };
-
-            reader.readAsBinaryString(file);
+                JsBarcode(".barcode").init();
+            });
         };
+
+        reader.onerror = (ex) => console.log(ex);
+
+        reader.readAsBinaryString(file);
     }
 }
 
 // Builds the HTML Table out of myList.
 function buildHtmlTable(myList, selector) {
-    var columns = addAllColumnHeaders(myList, selector);
+    const columns = addAllColumnHeaders(myList, selector);
+    const table = document.getElementById(selector);
 
-    for (var i = 0; i < myList.length; i++) {
-        var row$ = $('<tr/>');
-        for (var colIndex = 0; colIndex < columns.length; colIndex++) {
-            var cellValue = myList[i][columns[colIndex]];
+    for (let i = 0; i < myList.length; i++) {
+        const row = table.insertRow(-1);
+        for (let colIndex = 0; colIndex < columns.length; colIndex++) {
+            let cellValue = myList[i][columns[colIndex]];
 
             if (colIndex === 0) {
-
-            };
-            if (cellValue == null) cellValue = "";
-            row$.append($('<td/>').html(cellValue));
+                // do nothing
+            }
+            if (cellValue == null) {
+                cellValue = "";
+            }
+            const cell = row.insertCell(-1);
+            cell.innerHTML = cellValue;
         }
-
-        $(selector).append(row$);
     }
 }
 
@@ -94,24 +86,25 @@ function buildHtmlTable(myList, selector) {
 // all records.
 function addAllColumnHeaders(myList, selector) {
     const columnSet = [];
-    const headerTr$ = $('<tr/>');
+    const headerTr = document.createElement('tr');
 
     for (let i = 0; i < myList.length; i++) {
         const rowHash = myList[i];
         for (const key in rowHash) {
-            if ($.inArray(key, columnSet) === -1) {
+            if (!columnSet.includes(key)) {
                 columnSet.push(key);
-                headerTr$.append($('<th/>').html(key));
+                const th = document.createElement('th');
+                th.textContent = key;
+                headerTr.appendChild(th);
             }
         }
     }
-    $(selector).append(headerTr$);
-
+    document.getElementById(selector).appendChild(headerTr);
     return columnSet;
 }
 
 function SetBarcodeHeight(height) {
-    let elements = document.querySelectorAll(".barcode");
+    const elements = document.querySelectorAll(".barcode");
     for (let i = 0; i < elements.length; i++) {
         const currentElements = elements[i];
         currentElements.setAttribute('jsbarcode-height', height);
