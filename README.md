@@ -39,4 +39,3 @@ You are done! Print the results.
 #### [SheetJS](https://github.com/SheetJS/sheetjs) Read excel workbooks.
 #### [JsBarcode](https://github.com/lindell/JsBarcode) Barcode generator.
 #### [Bootstrap](https://getbootstrap.com/) Theming.
-#### [jQuery](https://jquery.com/) Javascript library.
