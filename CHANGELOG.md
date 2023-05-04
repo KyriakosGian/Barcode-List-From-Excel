@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## v2.0.1 (2023-05-05)
+## v2.0.1 (2023-05-05) 
 
 * Update SheetJS to v0.19.3 xlsx.full.min.js
 
