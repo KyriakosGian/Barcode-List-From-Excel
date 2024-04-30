@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## v2.0.2 (2024-04-30)
+
+* Update SheetJS to v0.20.2 xlsx.full.min.js  https://cdn.sheetjs.com/
+* Update JsBarcode to v3.11.6
+* Update Bootstrap to v5.3.3
+* Update Bootstrap icons to v1.11.3
+
 ## v2.0.1 (2023-05-05) 
 
 * Update SheetJS to v0.19.3 xlsx.full.min.js
